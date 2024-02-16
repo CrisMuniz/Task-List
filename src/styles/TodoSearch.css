@@ -1,0 +1,14 @@
+.formSearch {
+  display: flex;
+  justify-content: center;
+
+}
+.inputSearch {
+    padding: 10px;
+    text-align: center;
+    border-radius: 20px;
+    border-color:#ecbad3;
+    border-style:solid;
+    border-width: medium;
+    font-family: 'pacifico';
+}

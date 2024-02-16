@@ -1,11 +1,12 @@
 // import logo from './platzi.webp';
-import './App.css';
 import { TodoCounter } from './TodoCounter';
 import { TodoSearch } from './TodoSearch';
 import { TodoList } from './TodoList';
 import { TodoItem } from './TodoItem';
 import { CreateTodoButton } from './CreateTodoButton';
 import React from 'react';
+
+
 
 const defaultTodos = [
   { text: "cortar cebolla", completed: true},
@@ -22,10 +23,11 @@ function App() {
       <TodoSearch/>
 
       <TodoList>
-        {defaultTodos.map(todo => ( 
+        {defaultTodos.map(todo => (
         <TodoItem key={todo.text} tarea={todo.text} estado={todo.completed}/>))}
       </TodoList>
       <CreateTodoButton/>
+
     </React.Fragment>
   );
 }

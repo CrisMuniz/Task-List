@@ -1,9 +1,13 @@
+import imageTic from '../src/images/comprobado.png';
+import imageError from '../src/images/error.png';
+import './styles/TodoItem.css';
+
 function TodoItem(props) {
     return(
-      <li>
-        <span>V</span>
-        <p>{props.tarea}</p>
-        <span>X</span>
+      <li className='listTodoItem'>
+        <img className='imageTic' src={imageTic} alt="" />
+        <p className='parrTodoItem'>{props.tarea}</p>
+        <img className='imageError' src={imageError} alt="" />
       </li>
     );
   }

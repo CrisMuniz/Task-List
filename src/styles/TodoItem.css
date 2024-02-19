@@ -1,11 +1,12 @@
 .listTodoItem{
-    background-color:beige;
+    background-color:#C1ECFF;
     display: flex;
     flex-direction: row;
     justify-content: center;
     width: 250px;
     margin-bottom: 20px;
     border-radius: 20px;
+    position: relative;
 }
 .parrTodoItem {
     margin-left: 40px;
@@ -14,11 +15,18 @@
 .imageTic {
     width: 40px;
     height: 40px;
-    position:absolute;
-    right: 250px;
+    position: absolute;
+    top:-14px;
+    left:0;
+    bottom: 0;
     
 }
 .imageError {
+    display: flex;
+    flex-direction: row;
     width: 25px;
     height: 25px;
+    position: absolute;
+    right: 1px;
+    bottom: -8px;
 }

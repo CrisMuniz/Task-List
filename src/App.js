@@ -12,7 +12,7 @@ const defaultTodos = [
   { text: "cortar cebolla", completed: true},
   { text: "poner lavadora", completed: false},
   { text: "hacer curso react", completed: false},
-  { text: "tocarme las narices un rato lolo lolo lolo lolo lolo lolo lolo lo lol lol lol llol lololo lololo lkil ", completed: true},
+  { text: "tocarme las narices un rato lolo lolo lolo lolo lolo lolo lolo lo lol lol lol llol lololo lololo", completed: true},
   { text: "hacer la comida", completed: false},
 ];
 
@@ -21,12 +21,12 @@ function App() {
     <React.Fragment>
       <TodoCounter completed={16} total={25}/> {/*creamos unas pros y las pasamos al componente*/}
       <TodoSearch/>
-
+      <CreateTodoButton/>
       <TodoList>
         {defaultTodos.map(todo => (
         <TodoItem key={todo.text} tarea={todo.text} estado={todo.completed}/>))}
       </TodoList>
-      <CreateTodoButton/>
+      
 
     </React.Fragment>
   );

@@ -1,6 +1,10 @@
+import './styles/CreateTodoButton.css';
+
 function CreateTodoButton() {
     return(
-        <button>+</button>
+        <div className='createTodoButton'>
+        <button className='button'>Agregar Tarea</button>
+        </div>
     )
 }
 

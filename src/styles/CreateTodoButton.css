@@ -1,0 +1,26 @@
+.createTodoButton {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    
+   
+}
+.button {
+    font-family: 'della respira';
+    padding: 8px;
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+    border: medium  solid #ecbad3;
+    border-radius: 30px;
+    -webkit-transition: 1s linear;
+    transition: 1s linear;
+
+}
+.button:hover{
+    -webkit-transform: perspective(150px) rotateX(45deg);
+    transform: perspective(150px) rotateX(45deg);
+  }
+
+

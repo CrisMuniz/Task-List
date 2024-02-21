@@ -11,3 +11,6 @@
     font-family: 'pacifico';
     outline-color:#ecb6ff;
 }
+.inputSearch:hover {
+  background-color:#fadbd9 ;
+}

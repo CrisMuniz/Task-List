@@ -13,21 +13,32 @@
     margin-right: 20px;
     font-family: 'pacifico';
 }
+.parrTodoItem-complete {
+    text-decoration: line-through;
+}
 .imageTic {
     width: 40px;
     height: 40px;
+    border-radius: 50px;
     position: absolute;
     top:-14px;
     left:0;
     bottom: 0;
-    
+}
+.imageTic-active {
+    background-color:#ECB6FF;
 }
 .imageError {
     display: flex;
     flex-direction: row;
     width: 25px;
     height: 25px;
+    border-radius: 5px;
     position: absolute;
     right: 1px;
     bottom: -8px;
+
+}
+.imageError-delete:hover {
+    background-color:#ba494c;
 }

@@ -24,7 +24,12 @@ function App() {
       <CreateTodoButton/>
       <TodoList>
         {defaultTodos.map(todo => (
-        <TodoItem key={todo.text} tarea={todo.text} estado={todo.completed}/>))}
+        <TodoItem
+          key={todo.text}
+          tarea={todo.text}
+          estado={todo.completed}
+          />
+          ))}
       </TodoList>
       
 

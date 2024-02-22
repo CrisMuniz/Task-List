@@ -14,16 +14,42 @@ const defaultTodos = [
   { text: "hacer curso react", completed: false},
   { text: "tocarme las narices un rato lolo lolo lolo lolo lolo lolo lolo lo lol lol lol llol lololo lololo", completed: true},
   { text: "hacer la comida", completed: false},
+  { text: "HACER LA", completed: false},
 ];
 
 function App() {
+  //Estados
+  const [searchValue, setSearchValue] = React.useState('');
+  const [todos, setTodos] = React.useState(defaultTodos);
+
+//Estados Derivados
+  const completedTodos = todos.filter(todo => !!todo.completed).length;
+  const totalTodos = todos.length;
+
+  const searchedTodos = todos.filter(
+    (todo) => {
+      //Creamos variables con los metodos que necesitamos para hacer el includes
+      const todoText = todo.text.toLocaleLowerCase();
+      const searchText = searchValue.toLocaleLowerCase();
+
+     return todoText.includes(searchText);
+    }
+  );
+  console.log('los usuarios buscan la info de ' + searchValue);
+
   return (
     <React.Fragment>
-      <TodoCounter completed={16} total={25}/> {/*creamos unas pros y las pasamos al componente*/}
-      <TodoSearch/>
+      <TodoCounter
+        completed={completedTodos}
+        total={totalTodos}/>
+        {/*creamos unas pros y las pasamos al componente*/}
+      <TodoSearch
+        searchValue ={searchValue}
+        setSearchValue ={setSearchValue}
+      />
       <CreateTodoButton/>
       <TodoList>
-        {defaultTodos.map(todo => (
+        {searchedTodos.map(todo => (
         <TodoItem
           key={todo.text}
           tarea={todo.text}
@@ -31,7 +57,7 @@ function App() {
           />
           ))}
       </TodoList>
-      
+
 
     </React.Fragment>
   );

@@ -3,7 +3,16 @@ import './styles/CreateTodoButton.css';
 function CreateTodoButton() {
     return(
         <div className='createTodoButton'>
-        <button className='button'>Agregar Tarea</button>
+        <button 
+            className='button' 
+            onClick={
+                (event)=> {
+                    console.log('le diste click')
+                    console.log(event)
+                    console.log(event.target)
+                    }
+                }
+        >Agregar Tarea</button>
         </div>
     )
 }

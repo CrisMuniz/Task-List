@@ -28,3 +28,11 @@
 .titleCounter span {
     color:#B7709E;
 }
+.titleFinished {
+  font-size: 24px;
+  text-align: center;
+  margin: 0;
+  padding: 48px;
+  font-family: 'della respira';
+  
+}

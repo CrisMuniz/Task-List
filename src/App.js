@@ -5,6 +5,7 @@ import { TodoList } from './TodoList';
 import { TodoItem } from './TodoItem';
 import { CreateTodoButton } from './CreateTodoButton';
 import React from 'react';
+import confetti from 'canvas-confetti';
 
 
 
@@ -60,7 +61,9 @@ function App() {
     <React.Fragment>
       <TodoCounter
         completed={completedTodos}
-        total={totalTodos}/>
+        total={totalTodos}
+        confetti = {confetti}
+        />
         {/*creamos unas pros con el nombre que queramos y las pasamos al componente*/}
       <TodoSearch
         searchValue ={searchValue}
@@ -73,7 +76,7 @@ function App() {
           key={todo.text}
           tarea={todo.text}
           estado={todo.completed}
-          onComplete = {() => finishTodo(todo.text)}  //hacemos esto para evitar el error de "to many re-renders"
+          onComplete = {() => finishTodo(todo.text)}  //hacemos esto para evitar el error de "to many re-renders".una función dentro de otra función
           onDelete = {() => deleteTodo(todo.text)}
           />
           ))}

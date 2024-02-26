@@ -35,14 +35,33 @@ function App() {
      return todoText.includes(searchText);
     }
   );
-  console.log('los usuarios buscan la info de ' + searchValue);
+
+
+  // Funcion actualizadora de estado
+  const finishTodo = (text) => {
+    const newTodos = [...todos]; //creamos una copia del array inicial
+    const todoIndex = newTodos.findIndex(
+      (todo) => todo.text == text
+    );
+    newTodos[todoIndex].completed = true;
+    setTodos(newTodos)
+  }
+  // Funcion para eliminar un TODO
+  const deleteTodo = (text) => {
+    const newTodos = [...todos]; //creamos una copia del array inicial
+    const todoIndex = newTodos.findIndex(
+      (todo) => todo.text == text
+    );
+    newTodos.splice(todoIndex, 1); //con esto sacamos el Todo de la lista
+    setTodos(newTodos)
+  }
 
   return (
     <React.Fragment>
       <TodoCounter
         completed={completedTodos}
         total={totalTodos}/>
-        {/*creamos unas pros y las pasamos al componente*/}
+        {/*creamos unas pros con el nombre que queramos y las pasamos al componente*/}
       <TodoSearch
         searchValue ={searchValue}
         setSearchValue ={setSearchValue}
@@ -54,6 +73,8 @@ function App() {
           key={todo.text}
           tarea={todo.text}
           estado={todo.completed}
+          onComplete = {() => finishTodo(todo.text)}  //hacemos esto para evitar el error de "to many re-renders"
+          onDelete = {() => deleteTodo(todo.text)}
           />
           ))}
       </TodoList>

@@ -5,9 +5,15 @@ import './styles/TodoItem.css';
 function TodoItem(props) {
     return(
       <li className='listTodoItem'>
-        <img className={`imageTic ${props.estado && "imageTic-active"}`}src={imageTic} alt=""/>
+        <img 
+        className={`imageTic ${props.estado && "imageTic-active"}`}
+        onClick={props.onComplete}
+        src={imageTic} alt=""/>
         <p className={`parrTodoItem ${props.estado &&"parrTodoItem-complete"}`}>{props.tarea}</p>
-        <img className={`imageError imageError-delete`} src={imageError} alt="" />
+        <img 
+        className={`imageError imageError-delete`} 
+        onClick = {props.onDelete}
+        src={imageError} alt="" />
       </li>
     );
   }

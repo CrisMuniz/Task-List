@@ -62,7 +62,7 @@ function App() {
       <TodoCounter
         completed={completedTodos}
         total={totalTodos}
-        confetti = {confetti}
+        confetti = {confetti} //aqui llamamos a la dependencia instalada
         />
         {/*creamos unas pros con el nombre que queramos y las pasamos al componente*/}
       <TodoSearch

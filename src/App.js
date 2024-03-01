@@ -9,19 +9,35 @@ import confetti from 'canvas-confetti';
 
 
 
-const defaultTodos = [
-  { text: "cortar cebolla", completed: true},
-  { text: "poner lavadora", completed: false},
-  { text: "hacer curso react", completed: false},
-  { text: "tocarme las narices un rato lolo lolo lolo lolo lolo lolo lolo lo lol lol lol llol lololo lololo", completed: true},
-  { text: "hacer la comida", completed: false},
-  { text: "HACER LA", completed: false},
-];
+// const defaultTodos = [
+//   { text: "cortar cebolla", completed: true},
+//   { text: "poner lavadora", completed: false},
+//   { text: "hacer curso react", completed: false},
+//   { text: "tocarme las narices un rato lolo lolo lolo lolo lolo lolo lolo lo lol lol lol llol lololo lololo", completed: true},
+//   { text: "hacer la comida", completed: false},
+//   { text: "HACER LA", completed: false},
+// ];
+// localStorage.setItem('TODOs_V1', JSON.stringify(defaultTodos));
+
+// localStorage.setItem('TODOs_V1', defaultTodos);
+// localStorage.removeItem("TODOs_V1");
+
 
 function App() {
+  // LocalStorage
+  const localStorageTodos = localStorage.getItem('TODOs_V1');
+  let parsedTodos;
+
+  if(!localStorageTodos) {
+    localStorage.setItem('TODOs_V1', JSON.stringify([]));
+    parsedTodos = [];
+  } else {
+    parsedTodos = JSON.parse(localStorageTodos);
+  }
+
   //Estados
   const [searchValue, setSearchValue] = React.useState('');
-  const [todos, setTodos] = React.useState(defaultTodos);
+  const [todos, setTodos] = React.useState(parsedTodos);
 
 //Estados Derivados
   const completedTodos = todos.filter(todo => !!todo.completed).length;
@@ -37,7 +53,11 @@ function App() {
     }
   );
 
-
+// Función que actualiza el estado y el localStorage al mismo tiempo
+  const saveTodos = (newTodos) => {
+    localStorage.setItem('TODOs_V1', JSON.stringify(newTodos));
+    setTodos(newTodos);
+  }
   // Funcion actualizadora de estado
   const finishTodo = (text) => {
     const newTodos = [...todos]; //creamos una copia del array inicial
@@ -45,7 +65,7 @@ function App() {
       (todo) => todo.text == text
     );
     newTodos[todoIndex].completed = true;
-    setTodos(newTodos)
+    saveTodos(newTodos)
   }
   // Funcion para eliminar un TODO
   const deleteTodo = (text) => {
@@ -54,7 +74,7 @@ function App() {
       (todo) => todo.text == text
     );
     newTodos.splice(todoIndex, 1); //con esto sacamos el Todo de la lista
-    setTodos(newTodos)
+    saveTodos(newTodos)
   }
 
   return (

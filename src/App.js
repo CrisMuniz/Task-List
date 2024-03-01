@@ -22,22 +22,35 @@ import confetti from 'canvas-confetti';
 // localStorage.setItem('TODOs_V1', defaultTodos);
 // localStorage.removeItem("TODOs_V1");
 
+// Custom Hook
+function useLocalStorage(itemName, initialValue) {
+
+   // LocalStorage
+   const localStorageItem = localStorage.getItem(itemName);
+   let parsedItem;
+
+   if(!localStorageItem) {
+     localStorage.setItem(itemName, JSON.stringify(initialValue));
+     parsedItem = initialValue;
+   } else {
+     parsedItem = JSON.parse(localStorageItem);
+   }
+   // Creamos un nuevo estado para poder pasarlo a App
+   const [item, setItem] = React.useState(parsedItem);
+
+  // Función que actualiza el estado y el localStorage al mismo tiempo
+  const saveItem = (newItem) => {
+    localStorage.setItem(itemName, JSON.stringify(newItem));
+    setItem(newItem);
+  };
+
+  return [item, saveItem];
+}
 
 function App() {
-  // LocalStorage
-  const localStorageTodos = localStorage.getItem('TODOs_V1');
-  let parsedTodos;
-
-  if(!localStorageTodos) {
-    localStorage.setItem('TODOs_V1', JSON.stringify([]));
-    parsedTodos = [];
-  } else {
-    parsedTodos = JSON.parse(localStorageTodos);
-  }
-
-  //Estados
+//Estados
   const [searchValue, setSearchValue] = React.useState('');
-  const [todos, setTodos] = React.useState(parsedTodos);
+  const [todos, saveTodos] = useLocalStorage('TODOs_V1', []);
 
 //Estados Derivados
   const completedTodos = todos.filter(todo => !!todo.completed).length;
@@ -53,12 +66,8 @@ function App() {
     }
   );
 
-// Función que actualiza el estado y el localStorage al mismo tiempo
-  const saveTodos = (newTodos) => {
-    localStorage.setItem('TODOs_V1', JSON.stringify(newTodos));
-    setTodos(newTodos);
-  }
-  // Funcion actualizadora de estado
+
+// Funcion actualizadora de estado
   const finishTodo = (text) => {
     const newTodos = [...todos]; //creamos una copia del array inicial
     const todoIndex = newTodos.findIndex(
@@ -67,7 +76,7 @@ function App() {
     newTodos[todoIndex].completed = true;
     saveTodos(newTodos)
   }
-  // Funcion para eliminar un TODO
+// Funcion para eliminar un TODO
   const deleteTodo = (text) => {
     const newTodos = [...todos]; //creamos una copia del array inicial
     const todoIndex = newTodos.findIndex(

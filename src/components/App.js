@@ -1,4 +1,4 @@
-// import logo from './platzi.webp';
+
 import { TodoCounter } from './TodoCounter';
 import { TodoSearch } from './TodoSearch';
 import { TodoList } from './TodoList';

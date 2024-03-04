@@ -1,5 +1,5 @@
-import './styles/TodoCounter.css';
-import partyFace from './images/partyFace.png'
+import '../styles/TodoCounter.css';
+import partyFace from '../images/partyFace.png'
 
 function TodoCounter({ total, completed,confetti}) {
     const handleTitle = ()=> {

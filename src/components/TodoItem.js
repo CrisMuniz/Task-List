@@ -1,6 +1,6 @@
-import imageTic from '../src/images/check.png';
-import imageError from '../src/images/delete.png';
-import './styles/TodoItem.css';
+import imageTic from '../images/check.png';
+import imageError from '../images/delete.png';
+import '../styles/TodoItem.css';
 
 
 function TodoItem(props) {

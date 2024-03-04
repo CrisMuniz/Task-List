@@ -1,7 +1,7 @@
 body {
   margin: 0;
   width: 100vw;
-  background-image: url('../images/ilusion-brillante-fondo-infinito.jpg');
+  background-image: url('./images/ilusion-brillante-fondo-infinito.jpg');
   background-size:cover;
   background-repeat: no-repeat;
   background-attachment: fixed;

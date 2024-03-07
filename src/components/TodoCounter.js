@@ -1,9 +1,17 @@
 import '../styles/TodoCounter.css';
 import partyFace from '../images/partyFace.png'
 
-function TodoCounter({ total, completed,confetti}) {
+function TodoCounter({ total, completed,confetti, loading}) {
     const handleTitle = ()=> {
-        if (completed === total){
+        if (loading){
+           return (
+            <>
+            <h1 className= "titleCounter">
+                   Has Completado <span>0</span> de <span>0</span> TODOs
+                </h1>
+            </>
+           );
+        } else if (completed === total){
             return(
                 <>
                 <h1 className= {`titleFinished ${confetti()}`}>

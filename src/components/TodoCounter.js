@@ -7,7 +7,7 @@ function TodoCounter({ total, completed,confetti, loading}) {
            return (
             <>
             <h1 className= "titleCounter">
-                   Has Completado <span>0</span> de <span>0</span> TODOs
+                   ¡Bienvenido!
                 </h1>
             </>
            );

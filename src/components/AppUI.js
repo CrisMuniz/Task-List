@@ -3,6 +3,9 @@ import { TodoSearch } from './TodoSearch';
 import { TodoList } from './TodoList';
 import { TodoItem } from './TodoItem';
 import { CreateTodoButton } from './CreateTodoButton';
+import { TodosLoading} from './TodosLoading';
+import { TodosError } from './TodosError';
+import { TodosEmpty } from './TodosEmpty';
 import confetti from 'canvas-confetti';
 import React from 'react';
 
@@ -22,9 +25,9 @@ function AppUI({completedTodos, totalTodos, searchValue, setSearchValue, searche
         />
         <CreateTodoButton/>
         <TodoList>
-          {loading && <p>Cargando...</p>}
-          {error && <p>Error</p>}
-          {(!loading && searchedTodos.length === 0) && <p>Crea tu primer TODO!!</p>}
+          {loading && <TodosLoading/>}
+          {error && <TodosError/>}
+          {(!loading && searchedTodos.length === 0) && <TodosEmpty/>}
 
           {searchedTodos.map(todo => (
           <TodoItem

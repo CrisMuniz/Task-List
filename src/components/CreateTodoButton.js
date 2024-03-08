@@ -12,7 +12,7 @@ function CreateTodoButton() {
                     console.log(event.target)
                     }
                 }
-        >Agregar Tarea</button>
+        >Crear Tarea</button>
         </div>
     )
 }

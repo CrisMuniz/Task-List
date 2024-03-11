@@ -9,35 +9,30 @@ import { TodosEmpty } from "./TodosEmpty";
 // import confetti from "canvas-confetti";
 import React from "react";
 import { TodoContext } from "./TodoContext";
+import { TodosSearchedEmpty } from "./TodosSearchedEmpty";
 
 function AppUI() {
+  const {
+      loading,
+      error,
+      searchedTodos,
+      finishTodo,
+      deleteTodo,
+      totalTodos
+  } = React.useContext(TodoContext);
+
   return (
     <React.Fragment>
-      <TodoCounter
-      // completed={completedTodos}
-      // total={totalTodos}
-      // confetti = {confetti} //aqui llamamos a la dependencia instalada
-      // loading = {loading}
-      />
-      {/*creamos unas pros con el nombre que queramos y las pasamos al componente*/}
-      <TodoSearch
-      // searchValue ={searchValue}
-      // setSearchValue ={setSearchValue}
-      />
+      <TodoCounter/>
+      <TodoSearch/>
+
       <CreateTodoButton />
 
-      <TodoContext.Consumer>
-        {({
-          loading,
-          error,
-          searchedTodos,
-          finishTodo,
-          deleteTodo,
-        }) => (
           <TodoList>
             {loading && <TodosLoading />}
             {error && <TodosError />}
-            {!loading && searchedTodos.length === 0 && <TodosEmpty />}
+            {(!loading && totalTodos === 0) && <TodosEmpty />}
+            {(!loading && totalTodos > 0 && searchedTodos.length === 0 )&& <TodosSearchedEmpty/> }
 
             {searchedTodos.map((todo) => (
               <TodoItem
@@ -49,8 +44,7 @@ function AppUI() {
               />
             ))}
           </TodoList>
-        )}
-      </TodoContext.Consumer>
+
     </React.Fragment>
   );
 }

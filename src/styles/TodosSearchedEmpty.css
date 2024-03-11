@@ -1,0 +1,8 @@
+.parrSearchedEmpty {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 16px;
+    font-family: 'della respira';
+}

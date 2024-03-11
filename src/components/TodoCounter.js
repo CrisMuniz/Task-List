@@ -1,7 +1,15 @@
 import '../styles/TodoCounter.css';
 import partyFace from '../images/partyFace.png'
+import React from 'react';
+import { TodoContext } from './TodoContext';
+import confetti from 'canvas-confetti';
 
-function TodoCounter({ total, completed, loading}) {
+function TodoCounter() {
+    const {
+        completedTodos,
+        totalTodos,
+        loading,
+    } = React.useContext(TodoContext);
     const handleTitle = ()=> {
         if (loading){
            return (
@@ -11,11 +19,10 @@ function TodoCounter({ total, completed, loading}) {
                 </h1>
             </>
            );
-        } else if (completed === total){
+        } else if (completedTodos === totalTodos){
             return(
                 <>
-                {/* <h1 className= {`titleFinished ${confetti()}`}> */}
-                <h1 className= "titleFinished">
+                <h1 className= {`titleFinished ${confetti()}`}>
                    ¡Genial! Has terminado tus TODOs <img className='emoji' src={partyFace} alt="" />
                 </h1>
                
@@ -24,7 +31,7 @@ function TodoCounter({ total, completed, loading}) {
         } else {
             return(
                 <h1 className='titleCounter'>
-                    Has completado <span>{completed}</span> de <span>{total}</span> TODOs
+                    Has completado <span>{completedTodos}</span> de <span>{totalTodos}</span> TODOs
                 </h1>
 
             );

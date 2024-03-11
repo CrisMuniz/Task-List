@@ -9,20 +9,8 @@ function App() {
     <TodoProvider>
       <AppUI/>
     </TodoProvider>
-    
   );
 }
 
 
 export default App;
-
-
-  // completedTodos = {completedTodos}
-    // totalTodos = {totalTodos}
-    // searchValue = {searchValue}
-    // setSearchValue = {setSearchValue}
-    // searchedTodos = {searchedTodos}
-    // finishTodo = {finishTodo}
-    // deleteTodo = {deleteTodo}
-    // loading = {loading}
-    // error = {error}

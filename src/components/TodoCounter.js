@@ -1,7 +1,7 @@
 import '../styles/TodoCounter.css';
 import partyFace from '../images/partyFace.png'
 
-function TodoCounter({ total, completed,confetti, loading}) {
+function TodoCounter({ total, completed, loading}) {
     const handleTitle = ()=> {
         if (loading){
            return (
@@ -14,7 +14,8 @@ function TodoCounter({ total, completed,confetti, loading}) {
         } else if (completed === total){
             return(
                 <>
-                <h1 className= {`titleFinished ${confetti()}`}>
+                {/* <h1 className= {`titleFinished ${confetti()}`}> */}
+                <h1 className= "titleFinished">
                    ¡Genial! Has terminado tus TODOs <img className='emoji' src={partyFace} alt="" />
                 </h1>
                

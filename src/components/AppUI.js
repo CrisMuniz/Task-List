@@ -10,6 +10,7 @@ import { TodosEmpty } from "./TodosEmpty";
 import React from "react";
 import { TodoContext } from "./TodoContext";
 import { TodosSearchedEmpty } from "./TodosSearchedEmpty";
+import { Modal } from "./Modal";
 
 function AppUI() {
   const {
@@ -18,7 +19,8 @@ function AppUI() {
       searchedTodos,
       finishTodo,
       deleteTodo,
-      totalTodos
+      totalTodos,
+      openModal,
   } = React.useContext(TodoContext);
 
   return (
@@ -26,7 +28,15 @@ function AppUI() {
       <TodoCounter/>
       <TodoSearch/>
 
-      <CreateTodoButton />
+      <CreateTodoButton/>
+
+      {openModal && (
+          <Modal>
+          {/*  aqui metemos la funcionalidad de crear TODOs */}
+          aqui pondré la creacion de la tarea 
+        </Modal>
+      )}
+
 
           <TodoList>
             {loading && <TodosLoading />}

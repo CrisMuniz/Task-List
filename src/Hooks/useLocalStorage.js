@@ -50,7 +50,7 @@ function useLocalStorage(itemName, initialValue) {
  export { useLocalStorage};
 
 
- // const defaultTodos = [
+//  const defaultTodos = [
 //   { text: "cortar cebolla", completed: true},
 //   { text: "poner lavadora", completed: false},
 //   { text: "hacer curso react", completed: false},

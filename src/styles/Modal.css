@@ -1,0 +1,47 @@
+
+.modalTask {
+    background-color: rgba(111, 105, 109,.8);
+    position:fixed;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    opacity:1;
+    pointer-events:none;
+    transition: all 1s;
+}
+.modalBox {
+    background-color:#F1C0DF;
+    width:200px;
+    padding: 10px 20px;
+    margin: 90% auto;
+    position: relative;
+    border-radius: 20px;
+}
+.close {
+    background:palevioletred;
+    color: #FFFFFF;
+    line-height: 25px;
+    position: absolute;
+    right: 2px;
+    text-align: center;
+    top: -6px;
+    width: 24px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius:50px;
+ 
+}
+ 
+.close:hover {
+    background: #FAAC58;
+    color:#222;
+}
+.modalBtn {
+    display: flex;
+    justify-content: center;
+}
+.btn {
+    border-radius: 10px;
+    background-color: powderblue;
+}

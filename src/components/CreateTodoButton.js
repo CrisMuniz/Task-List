@@ -1,15 +1,23 @@
 import '../styles/CreateTodoButton.css';
+import { TodoContext } from './TodoContext';
+import React from 'react';
 
 function CreateTodoButton() {
+    const {
+        openModal,
+        setOpenModal,
+    } = React.useContext(TodoContext);
     return(
         <div className='createTodoButton'>
         <button 
             className='button' 
-            onClick={
-                (event)=> {
+            onClick={()=> {
                     console.log('le diste click')
-                    console.log(event)
-                    console.log(event.target)
+                    if(!openModal){
+                        setOpenModal(true)
+                    }else {
+                        setOpenModal(false)
+                    }
                     }
                 }
         >Crear Tarea</button>

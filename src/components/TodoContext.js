@@ -13,6 +13,8 @@ function TodoProvider({ children }) {
     error,
   } = useLocalStorage("TODOs_V1", []);
 
+  const [openModal, setOpenModal] = React.useState(false);
+
   //Estados Derivados
   const completedTodos = todos.filter((todo) => !!todo.completed).length;
   const totalTodos = todos.length;
@@ -51,6 +53,8 @@ function TodoProvider({ children }) {
         deleteTodo,
         loading,
         error,
+        openModal,
+        setOpenModal,
       }}
     >
       {children}

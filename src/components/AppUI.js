@@ -11,6 +11,7 @@ import React from "react";
 import { TodoContext } from "./TodoContext";
 import { TodosSearchedEmpty } from "./TodosSearchedEmpty";
 import { Modal } from "./Modal";
+import {TodoForm} from "./TodoForm";
 
 function AppUI() {
   const {
@@ -33,7 +34,8 @@ function AppUI() {
       {openModal && (
           <Modal>
           {/*  aqui metemos la funcionalidad de crear TODOs */}
-          aqui pondré la creacion de la tarea 
+          <TodoForm/>
+      
         </Modal>
       )}
 

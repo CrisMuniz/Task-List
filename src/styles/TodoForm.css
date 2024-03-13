@@ -1,0 +1,27 @@
+.form {
+    background-color:#F1C0DF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 200px;
+    padding: 20px 20px;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    margin:auto;
+    position: fixed;
+    border-radius: 20px;
+}
+
+.cancelBtn {
+    background:palevioletred;
+    border-radius:50px;
+ 
+}
+.addBtn {
+    border-radius: 10px;
+    background-color: powderblue;
+}

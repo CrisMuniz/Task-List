@@ -4,9 +4,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 200px;
+    width: 250px;
     height: 200px;
-    padding: 20px 20px;
+    padding: 5px 10px;
     top:0;
     right:0;
     bottom:0;
@@ -15,13 +15,36 @@
     position: fixed;
     border-radius: 20px;
 }
-
+.formLabel {
+    font-family: "della respira";
+    margin-bottom: 30px;
+}
+.formTextarea {
+    margin-bottom: 20px;
+    border-radius: 10px;
+    width: 200px;
+    text-align: center;
+    border: 3px solid #8BBEED;
+}
+.formTextarea::placeholder {
+    font-family: "pacifico";
+}
+.buttons {
+    width: 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
 .cancelBtn {
     background:palevioletred;
     border-radius:50px;
+    cursor: pointer;
+    font-family: "della respira";
  
 }
 .addBtn {
     border-radius: 10px;
-    background-color: powderblue;
+    background-color: #E5B7FF;
+    cursor: pointer;
+    font-family: "della respira";
 }

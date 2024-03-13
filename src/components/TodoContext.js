@@ -26,8 +26,16 @@ function TodoProvider({ children }) {
 
     return todoText.includes(searchText);
   });
-
-  // Funcion actualizadora de estado
+  // función actualizadora de Añadir TODO
+  const addTodo = (text) => {
+    const newTodos = [...todos]; //creamos una copia del array inicial
+    newTodos.push({
+      text,
+      completed: false,
+    });
+    saveTodos(newTodos);
+  }
+  // Funcion actualizadora de estado completar TODO
   const finishTodo = (text) => {
     const newTodos = [...todos]; //creamos una copia del array inicial
     const todoIndex = newTodos.findIndex((todo) => todo.text === text);
@@ -55,6 +63,7 @@ function TodoProvider({ children }) {
         error,
         openModal,
         setOpenModal,
+        addTodo,
       }}
     >
       {children}

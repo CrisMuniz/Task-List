@@ -14,6 +14,8 @@ function TodoProvider({ children }) {
   } = useLocalStorage("TODOs_V1", []);
 
   const [openModal, setOpenModal] = React.useState(false);
+ 
+
 
   //Estados Derivados
   const completedTodos = todos.filter((todo) => !!todo.completed).length;
@@ -26,6 +28,9 @@ function TodoProvider({ children }) {
 
     return todoText.includes(searchText);
   });
+
+
+
   // función actualizadora de Añadir TODO
   const addTodo = (text) => {
     const newTodos = [...todos]; //creamos una copia del array inicial
@@ -49,6 +54,15 @@ function TodoProvider({ children }) {
     newTodos.splice(todoIndex, 1); //con esto sacamos el Todo de la lista
     saveTodos(newTodos);
   };
+
+  const resetBtn = (text) => {
+    const newTodos = [...todos]; //creamos una copia del array inicial
+    newTodos.splice({
+      text,
+      completed: true,
+    });
+    saveTodos(newTodos);
+  };
   return (
     <TodoContext.Provider
       value={{
@@ -64,6 +78,7 @@ function TodoProvider({ children }) {
         openModal,
         setOpenModal,
         addTodo,
+        resetBtn,
       }}
     >
       {children}

@@ -1,0 +1,18 @@
+.resetContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 10px;
+
+}
+.reset {
+    font-family: "della respira";
+    border-radius: 50px;
+    width: 50px;
+    background-color:#fbc8b0;
+    border-color: #8f2d36;
+
+}
+.reset:hover{
+    background-color: #F08487;
+}

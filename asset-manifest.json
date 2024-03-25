@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/Task-List/static/css/main.44461d90.css",
+    "main.js": "/Task-List/static/js/main.2f9e4a02.js",
+    "static/media/ilusion-brillante-fondo-infinito.jpg": "/Task-List/static/media/ilusion-brillante-fondo-infinito.94e77504bc0386de0f06.jpg",
+    "static/media/delete.png": "/Task-List/static/media/delete.e473b5413e36dc8e7d71.png",
+    "static/media/check.png": "/Task-List/static/media/check.a9b7ee6d4fe1ed2e6520.png",
+    "index.html": "/Task-List/index.html",
+    "main.44461d90.css.map": "/Task-List/static/css/main.44461d90.css.map",
+    "main.2f9e4a02.js.map": "/Task-List/static/js/main.2f9e4a02.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.44461d90.css",
+    "static/js/main.2f9e4a02.js"
+  ]
+}

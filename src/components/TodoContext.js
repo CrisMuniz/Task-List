@@ -54,7 +54,7 @@ function TodoProvider({ children }) {
     newTodos.splice(todoIndex, 1); //con esto sacamos el Todo de la lista
     saveTodos(newTodos);
   };
-
+// Función de botón de Reset para limpiar toda la lista de compleados
   const resetBtn = (text) => {
     const newTodos = [...todos]; //creamos una copia del array inicial
     newTodos.splice({

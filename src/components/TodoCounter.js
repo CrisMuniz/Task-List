@@ -11,7 +11,7 @@ function TodoCounter() {
         totalTodos,
         loading,
     } = React.useContext(TodoContext);
-   
+
     const handleTitle = ()=> {
 
         if (loading){
@@ -23,10 +23,12 @@ function TodoCounter() {
             </>
            );
         } else if (completedTodos === totalTodos && totalTodos > 0){
+            confetti()
+
             return(
                 <>
-                <h1 className= {`titleFinished ${confetti}`}>
-                   ¡Genial! Has terminado tus TODOs <img className='emoji' src={partyFace} alt="" />
+                <h1 className= "titleFinished">
+                   ¡Genial! Has terminado tus TODOs <img className='emoji' src={partyFace} alt="emoji fiesta" />
 
                 </h1>
                 <Reset/>

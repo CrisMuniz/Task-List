@@ -13,7 +13,7 @@ function TodoItem(props) {
         src={imageTic} alt=""/>
 
         <p className={`parrTodoItem ${props.estado &&"parrTodoItem-complete"}`}>{props.tarea}</p>
-
+    
         <img
         className={`imageError imageError-delete`}
         onClick = {props.onDelete}

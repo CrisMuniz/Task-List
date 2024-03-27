@@ -14,3 +14,18 @@
 .inputSearch:hover {
   background-color:#fadbd9 ;
 }
+
+/* Media Queries */
+@media screen and (min-width: 768px){
+  .inputSearch{
+    width: 200px;
+    font-size: 16px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .inputSearch{
+    width: 250px;
+    font-size: 18px;
+  }
+}

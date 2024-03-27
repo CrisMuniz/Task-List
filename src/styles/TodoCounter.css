@@ -39,8 +39,22 @@
   font-family: 'della respira';
   
 }
-/* .emoji {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-} */
+
+/* Media Queries */
+@media screen and (min-width: 768px) {
+  .titleCounter{
+    font-size: 30px;
+  }
+  .titleFinished{
+    font-size: 30px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .titleCounter{
+    font-size: 36px;
+  }
+  .titleFinished{
+    font-size: 36px;
+  }
+}

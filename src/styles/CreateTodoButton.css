@@ -4,6 +4,7 @@
     justify-content: center;
     align-items: center;
     height: 50px;
+    margin-top: 10px;
 
 }
 .button {
@@ -21,6 +22,20 @@
 .button:hover{
     -webkit-transform: perspective(150px) rotateX(45deg);
     transform: perspective(150px) rotateX(45deg);
-  }
+}
 
+/* Media Queries */
+@media screen and (min-width: 768px){
+    .button{
+        width: 130px;
+        font-size: 16px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .button{
+        width: 150px;
+        font-size: 18px;
+    }
+}
 

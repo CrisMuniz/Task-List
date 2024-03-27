@@ -63,3 +63,18 @@
       height: 100%;
     }
   }
+
+/* Media Queries */
+@media screen and (min-width: 768px) {
+  .loader{
+    width: 65px;
+    height: 65px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .loader{
+    width: 70px;
+    height: 70px;
+  }
+}

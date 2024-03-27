@@ -1,12 +1,13 @@
-# Repositorio base del Curso de Introducción a React.js en Platzi
+# TASK LIST
 
-¡Hola, Platzinauta!
+Este Repositorio es un proyecto de Lista de Tareas que se ha desarrollado a partir de un curso de React.js en Platzi.
+Durante este proyecto se han estado trabajando eventos, estados, contextos, como hacer modales, evitar el prop drilling entre otras cosas.
 
-En este repositorio encontrarás el código de todas las clases del [Curso de Introducción a React.js](https://platzi.com/reactjs). Para empezar solo debes clonar este repositorio (`git clone`), instalar sus dependencias (`npm i`) y ejecutar la aplicación (`npm start`).
+Este es el resultado de mi aplicación:
+![Vista inicial del proyecto](image1.png)
+![Vista de el modal](image2.png)
+![Vista de todas las tareas completadas](image3.png)
 
-La rama principal contiene el código con el que eempezamos el curso. En las demás ramas encontrarás el código de las siguientes clases y finalmente el deploy de la aplicación.
-
-¡Mucha suerte aprendiendo React! #NuncaParesDeAprender
 
 ## Getting Started with Create React App
 

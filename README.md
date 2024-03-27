@@ -4,6 +4,7 @@ Este Repositorio es un proyecto de Lista de Tareas que se ha desarrollado a part
 Durante este proyecto se han estado trabajando eventos, estados, contextos, como hacer modales, evitar el prop drilling entre otras cosas.
 
 Este es el resultado de mi aplicación:
+
 ![Vista inicial del proyecto](image1.png)
 ![Vista de el modal](image2.png)
 ![Vista de todas las tareas completadas](image3.png)
